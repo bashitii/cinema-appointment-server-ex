@@ -1,5 +1,5 @@
 INSERT INTO users (full_name, email, password, role) VALUES
-('Admin User', 'admin@cinemanova.com', '$2b$10$replace_this_with_a_real_bcrypt_hash_before_using', 'admin');
+('Admin User', 'admin@cinemanova.com', '$2b$10$B/iAezQlo8uNwPqvp5X9WusFJtDIR92LR.xWWvC9G.e4Bf/bTW0M2', 'admin');
 
 INSERT INTO movies (title, description, genre, duration, release_date, poster_url, status) VALUES
 ('Dune: Part Two', 'Paul Atreides unites with the Fremen to seek revenge against the conspirators who destroyed his family.', 'Sci-Fi', 166, '2024-03-01', '', 'now_showing'),
@@ -18,4 +18,3 @@ FROM (VALUES
 ('1', 'C'), ('2', 'C'), ('3', 'C'), ('4', 'C'), ('5', 'C'), ('6', 'C'), ('7', 'C'), ('8', 'C'),
 ('1', 'D'), ('2', 'D'), ('3', 'D'), ('4', 'D'), ('5', 'D'), ('6', 'D'), ('7', 'D'), ('8', 'D')
 ) AS seat_data(seat_number, seat_row);
-
