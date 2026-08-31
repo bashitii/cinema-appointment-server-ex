@@ -33,4 +33,35 @@ Simple Express and PostgreSQL backend for the Cinema Appointment System.
 
 Add a TMDB read-access token to `TMDB_API_KEY` in `.env` before using the TMDB endpoints.
 
+## Endpoints
+
+Protected endpoints require this request header:
+
+```text
+Authorization: Bearer your_jwt_token
+```
+
+| Method | Endpoint | Access | Purpose |
+| --- | --- | --- | --- |
+| POST | `/api/auth/register` | Public | Create a customer account. |
+| POST | `/api/auth/login` | Public | Login and receive a JWT. |
+| GET / PUT | `/api/auth/profile` | Logged-in user | Read or update the current profile. |
+| GET | `/api/movies` | Public | Browse, search, and filter movies. |
+| GET | `/api/movies/:id` | Public | Read one movie. |
+| POST / PUT / DELETE | `/api/movies/:id` | Admin | Manage movies. |
+| GET | `/api/screens` | Public | List screens. |
+| POST / PUT / DELETE | `/api/screens/:id` | Admin | Manage screens. |
+| GET | `/api/screens/:screenId/seats` | Public | List seats in a screen. |
+| POST / PUT / DELETE | `/api/seats/:id` | Admin | Manage seats. |
+| GET | `/api/showtimes` | Public | List showtimes. |
+| GET | `/api/showtimes/:id` | Public | Read one showtime. |
+| POST / PUT / DELETE | `/api/showtimes/:id` | Admin | Manage showtimes. |
+| GET | `/api/showtimes/:showtimeId/seats` | Public | Get live seat availability for a showtime. |
+| GET / POST | `/api/appointments` | User/Admin | List appointments or create a booking. |
+| GET | `/api/appointments/:id` | Owner/Admin | Read an appointment. |
+| PUT | `/api/appointments/:id/cancel` | Owner/Admin | Cancel an eligible appointment. |
+| PUT | `/api/appointments/:id` | Admin | Change appointment status. |
+| GET | `/api/tmdb/search?query=...` | Public | Search TMDB movies. |
+| GET | `/api/tmdb/movie/:id` | Public | Read TMDB movie details. |
+
 Feature endpoints will be added directly to `server.js` in small, understandable steps.
