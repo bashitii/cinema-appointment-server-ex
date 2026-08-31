@@ -23,4 +23,14 @@ Simple Express and PostgreSQL backend for the Cinema Appointment System.
 | --- | --- | --- |
 | GET | `/api/health` | Confirms that the API is running. |
 
+## API groups
+
+- `/api/auth` - register, login, and profile.
+- `/api/movies` - public movie browsing and admin movie CRUD.
+- `/api/screens`, `/api/seats`, `/api/showtimes` - cinema management.
+- `/api/appointments` - customer bookings and admin appointment management.
+- `/api/tmdb` - TMDB movie search and details.
+
+Add a TMDB read-access token to `TMDB_API_KEY` in `.env` before using the TMDB endpoints.
+
 Feature endpoints will be added directly to `server.js` in small, understandable steps.
